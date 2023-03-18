@@ -3,7 +3,7 @@ import GeographyChart from "../../components/GeographyChart";
 import Header from "../../components/Header";
 import { tokens } from "../../theme";
 
-const Geography = () => {
+const Images = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
@@ -21,4 +21,4 @@ const Geography = () => {
   );
 };
 
-export default Geography;
+export default Images;
