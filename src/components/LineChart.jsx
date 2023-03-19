@@ -2,6 +2,7 @@ import { ResponsiveLine } from "@nivo/line";
 import React, { useState, useEffect } from "react";
 import { useTheme } from "@mui/material";
 import { tokens } from "../theme";
+import { Box, Typography, IconButton } from "@mui/material";
 
 export const mockLineData = [
   {
@@ -37,10 +38,11 @@ const options = {
   },
 };
 
-const LineChart = () => {
-  const feedId = "tien2612";
-  const feedKey = "aio_ifkz56vrwtMgVFn2F8njEoyP50fu";
+const LineChart = ({ index }) => {
+  const feedIds = ["Temperature", "Humidity", "Soil Moisture"];
+  const feedKey = "aio_PGJi38ga3BefZCY7BEw9IHZpodZO";
 
+  
   const [chartData, setChartData] = useState([]);
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -48,13 +50,18 @@ const LineChart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const hours = 1;
+        const hours = 24;
         const now = new Date();
         const startTime = new Date(now - hours * 60 * 60 * 1000).toISOString();
 
-        const url = "https://io.adafruit.com/api/v2/tien2612/feeds/bbc-temp/data?start_time=${startTime}";
+        // const url = "https://io.adafruit.com/api/v2/tien2612/feeds/bbc-temp/data?start_time=${startTime}";
+        const url = [
+          `https://io.adafruit.com/api/v2/tien2612/feeds/bbc-temp/data?start_time=${startTime}`,
+          `https://io.adafruit.com/api/v2/tien2612/feeds/bbc-humi/data?start_time=${startTime}`,
+          `https://io.adafruit.com/api/v2/tien2612/feeds/bbc-shumi/data?start_time=${startTime}`,
+        ];
 
-        const response = await fetch(url, {
+        const response = await fetch(url[index], {
           headers: {
             "X-AIO-Key": feedKey,
           },
@@ -67,7 +74,8 @@ const LineChart = () => {
         const data = await response.json();
 
         const chartData = {
-          id: "Temperature",
+          id: feedIds[index],
+          // color: colors[index % colors.length],
           data: data.map((d) => ({
             x: new Date(d.created_at).toLocaleTimeString(),
             y: d.value,
@@ -80,25 +88,9 @@ const LineChart = () => {
     };
 
     fetchData();
-  }, []);
+  }, [index]);
   console.log(chartData);
-  // return (
-  //     // <Line
-  //       // data={chartData}
-  //       // options={{
-  //       //   responsive: true,
-  //       //   scales: {
-  //       //     yAxes: [
-  //       //       {
-  //       //         ticks: {
-  //       //           beginAtZero: true,
-  //       //         },
-  //       //       },
-  //       //     ],
-  //       //   },
-  //       // }}
-  // //     />
-  // );
+
   return (
     <ResponsiveLine
       data={chartData}
@@ -133,7 +125,7 @@ const LineChart = () => {
           container: {
             color: colors.primary[500],
           },
-        },
+        },   
       }}
       colors={0 ? { datum: "color" } : { scheme: "nivo" }} // added
       margin={{ top: 50, right: 110, bottom: 50, left: 60 }}

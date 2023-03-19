@@ -18,7 +18,7 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import StorageIcon from '@mui/icons-material/Storage';
 import InfoIcon from '@mui/icons-material/Info';
-
+import { IoIosLeaf } from 'react-icons/io';
 // import {ImLeaf} from 'react-icons/fa'
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
@@ -45,6 +45,8 @@ const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
 
+  console.log(colors.primary[400]);
+
   return (
     <Box
       sx={{
@@ -70,7 +72,7 @@ const Sidebar = () => {
           {/* LOGO AND MENU ICON */}
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
-            icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
+            icon={isCollapsed ? <IoIosLeaf color= "#6870fa" fontSize={20} /> : undefined}
             style={{
               margin: "10px 0 20px 0",
               color: colors.grey[100],
@@ -89,7 +91,8 @@ const Sidebar = () => {
                 Plant Disease 
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
-                  <MenuOutlinedIcon />
+                  {/* <MenuOutlinedIcon /> */}
+                  <IoIosLeaf color= "#6870fa" />
                 </IconButton>
               </Box>
             )}

@@ -141,7 +141,7 @@ const Dashboard = () => {
         {/* ROW 2 */}
         {/* Temparature chart */}
         <Box
-          gridColumn="span 8"
+          gridColumn="span 6"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
@@ -170,12 +170,12 @@ const Dashboard = () => {
             </Box>
           </Box>
           <Box height="250px" m="-20px 0 0 0">
-            <LineChart isDashboard={true} />
+            <LineChart index = {0} isDashboard={true} />
           </Box>
         </Box>
         {/* Humidity chart */}
-        {/* <Box
-          gridColumn="span 8"
+        <Box
+          gridColumn="span 6"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
@@ -204,13 +204,45 @@ const Dashboard = () => {
             </Box>
           </Box>
           <Box height="250px" m="-20px 0 0px 0">
-            <LineChart isDashboard={true} />
+            <LineChart index = {1} isDashboard={true} />
           </Box>
-        </Box> */}
+        </Box>
 
 
         {/* Soil moisture chart */}
-        
+        <Box
+          gridColumn="span 6"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+        >
+          <Box
+            mt="25px"
+            p="0 30px"
+            display="flex "
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Box>
+              <Typography
+                variant="h5"
+                fontWeight="600"
+                color={colors.grey[100]}
+              >
+                Soil Moisture
+              </Typography>
+            </Box>
+            <Box>
+              <IconButton>
+                <DownloadOutlinedIcon
+                  sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
+                />
+              </IconButton>
+            </Box>
+          </Box>
+          <Box height="250px" m="-20px 0 0px 0">
+            <LineChart index = {2} isDashboard={true} />
+          </Box>
+        </Box>
         {/* <Box
           gridColumn="span 4"
           gridRow="span 2"

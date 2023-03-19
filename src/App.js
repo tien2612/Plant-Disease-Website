@@ -30,8 +30,8 @@ function App() {
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
               <Route path="/" element={<Dashboard />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/images" element={<Images />} />
+              <Route path="/" element={<About />} />
+              <Route path="/" element={<Images />} />
             </Routes>
           </main>
         </div>
