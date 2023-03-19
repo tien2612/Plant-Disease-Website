@@ -99,10 +99,8 @@ const LineChart = () => {
   //       // }}
   // //     />
   // );
-  console.log(options);
   return (
     <ResponsiveLine
-      options={options}
       data={chartData}
       theme={{
         axis: {
