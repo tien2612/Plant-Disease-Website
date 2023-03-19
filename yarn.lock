@@ -1805,15 +1805,6 @@
     prop-types "^15.8.1"
     reselect "^4.1.6"
 
-"@nivo/annotations@0.79.1":
-  version "0.79.1"
-  resolved "https://registry.npmjs.org/@nivo/annotations/-/annotations-0.79.1.tgz"
-  integrity sha512-lYso9Luu0maSDtIufwvyVt2+Wue7R9Fh3CIjuRDmNR72UjAgAVEcCar27Fy865UXGsj2hRJZ7KY/1s6kT3gu/w==
-  dependencies:
-    "@nivo/colors" "0.79.1"
-    "@react-spring/web" "9.3.1"
-    lodash "^4.17.21"
-
 "@nivo/annotations@0.80.0":
   version "0.80.0"
   resolved "https://registry.npmjs.org/@nivo/annotations/-/annotations-0.80.0.tgz"
@@ -1831,16 +1822,6 @@
     "@nivo/colors" "0.80.0"
     "@react-spring/web" "9.4.5"
     d3-shape "^1.3.5"
-
-"@nivo/axes@0.79.0":
-  version "0.79.0"
-  resolved "https://registry.npmjs.org/@nivo/axes/-/axes-0.79.0.tgz"
-  integrity sha512-EhSeCPxtWEuxqnifeyF/pIJEzL7pRM3rfygL+MpfT5ypu5NcXYRGQo/Bw0Vh+GF1ML+tNAE0rRvCu2jgLSdVNQ==
-  dependencies:
-    "@nivo/scales" "0.79.0"
-    "@react-spring/web" "9.3.1"
-    d3-format "^1.4.4"
-    d3-time-format "^3.0.0"
 
 "@nivo/axes@0.80.0":
   version "0.80.0"
@@ -1866,16 +1847,6 @@
     "@react-spring/web" "9.4.5"
     d3-scale "^3.2.3"
     d3-shape "^1.3.5"
-    lodash "^4.17.21"
-
-"@nivo/colors@0.79.1":
-  version "0.79.1"
-  resolved "https://registry.npmjs.org/@nivo/colors/-/colors-0.79.1.tgz"
-  integrity sha512-45huBmz46OoQtfqzHrnqDJ9msebOBX84fTijyOBi8mn8iTDOK2xWgzT7cCYP3hKE58IclkibkzVyWCeJ+rUlqg==
-  dependencies:
-    d3-color "^2.0.0"
-    d3-scale "^3.2.3"
-    d3-scale-chromatic "^2.0.0"
     lodash "^4.17.21"
 
 "@nivo/colors@0.80.0":
@@ -1916,29 +1887,24 @@
     d3-geo "^1.11.3"
     lodash "^4.17.21"
 
-"@nivo/legends@0.79.1":
-  version "0.79.1"
-  resolved "https://registry.npmjs.org/@nivo/legends/-/legends-0.79.1.tgz"
-  integrity sha512-AoabiLherOAk3/HR/N791fONxNdwNk/gCTJC/6BKUo2nX+JngEYm3nVFmTC1R6RdjwJTeCb9Vtuc4MHA+mcgig==
-
 "@nivo/legends@0.80.0":
   version "0.80.0"
   resolved "https://registry.npmjs.org/@nivo/legends/-/legends-0.80.0.tgz"
   integrity sha512-h0IUIPGygpbKIZZZWIxkkxOw4SO0rqPrqDrykjaoQz4CvL4HtLIUS3YRA4akKOVNZfS5agmImjzvIe0s3RvqlQ==
 
-"@nivo/line@^0.79.1":
-  version "0.79.1"
-  resolved "https://registry.npmjs.org/@nivo/line/-/line-0.79.1.tgz"
-  integrity sha512-V+2wY5TGpWiWBcb2LDtNsO79Ix93QtSq1HAdEIsjYtwFT/ekoCUA/OorIjRVUVzyf27vjjlbhmNNKrqIsYQR1Q==
+"@nivo/line@^0.80.0":
+  version "0.80.0"
+  resolved "https://registry.yarnpkg.com/@nivo/line/-/line-0.80.0.tgz#ba541b0fcfd53b3a7ce865feb43c993b7cf4a7d4"
+  integrity sha512-6UAD/y74qq3DDRnVb+QUPvXYojxMtwXMipGSNvCGk8omv1QZNTaUrbV+eQacvn9yh//a0yZcWipnpq0tGJyJCA==
   dependencies:
-    "@nivo/annotations" "0.79.1"
-    "@nivo/axes" "0.79.0"
-    "@nivo/colors" "0.79.1"
-    "@nivo/legends" "0.79.1"
-    "@nivo/scales" "0.79.0"
-    "@nivo/tooltip" "0.79.0"
-    "@nivo/voronoi" "0.79.0"
-    "@react-spring/web" "9.3.1"
+    "@nivo/annotations" "0.80.0"
+    "@nivo/axes" "0.80.0"
+    "@nivo/colors" "0.80.0"
+    "@nivo/legends" "0.80.0"
+    "@nivo/scales" "0.80.0"
+    "@nivo/tooltip" "0.80.0"
+    "@nivo/voronoi" "0.80.0"
+    "@react-spring/web" "9.4.5"
     d3-shape "^1.3.5"
 
 "@nivo/pie@^0.80.0":
@@ -1959,16 +1925,6 @@
   dependencies:
     react-lifecycles-compat "^3.0.4"
 
-"@nivo/scales@0.79.0":
-  version "0.79.0"
-  resolved "https://registry.npmjs.org/@nivo/scales/-/scales-0.79.0.tgz"
-  integrity sha512-5fAt5Wejp8yzAk6qmA3KU+celCxNYrrBhfvOi2ECDG8KQi+orbDnrO6qjVF6+ebfOn9az8ZVukcSeGA5HceiMg==
-  dependencies:
-    d3-scale "^3.2.3"
-    d3-time "^1.0.11"
-    d3-time-format "^3.0.0"
-    lodash "^4.17.21"
-
 "@nivo/scales@0.80.0":
   version "0.80.0"
   resolved "https://registry.npmjs.org/@nivo/scales/-/scales-0.80.0.tgz"
@@ -1979,13 +1935,6 @@
     d3-time-format "^3.0.0"
     lodash "^4.17.21"
 
-"@nivo/tooltip@0.79.0":
-  version "0.79.0"
-  resolved "https://registry.npmjs.org/@nivo/tooltip/-/tooltip-0.79.0.tgz"
-  integrity sha512-hsJsvhDVR9P/QqIEDIttaA6aslR3tU9So1s/k2jMdppL7J9ZH/IrVx9TbIP7jDKmnU5AMIP5uSstXj9JiKLhQA==
-  dependencies:
-    "@react-spring/web" "9.3.1"
-
 "@nivo/tooltip@0.80.0":
   version "0.80.0"
   resolved "https://registry.npmjs.org/@nivo/tooltip/-/tooltip-0.80.0.tgz"
@@ -1993,10 +1942,10 @@
   dependencies:
     "@react-spring/web" "9.4.5"
 
-"@nivo/voronoi@0.79.0":
-  version "0.79.0"
-  resolved "https://registry.npmjs.org/@nivo/voronoi/-/voronoi-0.79.0.tgz"
-  integrity sha512-0MrY33MBjLPQsgtf6PU+NUeQVib0g5fR9UBWsbO3YdkgDhXNnbXZ4FZlMAznoDSOxQ/efAuP7jWfnemFCpSwUg==
+"@nivo/voronoi@0.80.0":
+  version "0.80.0"
+  resolved "https://registry.yarnpkg.com/@nivo/voronoi/-/voronoi-0.80.0.tgz#59cc7ed253dc1a5bbcf614a5ac37d2468d561599"
+  integrity sha512-zaJV3I3cRu1gHpsXCIEvp6GGlGY8P7D9CwAVCjYDGrz3W/+GKN0kA7qGyHTC97zVxJtfefxSPlP/GtOdxac+qw==
   dependencies:
     d3-delaunay "^5.3.0"
     d3-scale "^3.2.3"
@@ -4307,7 +4256,7 @@ d3-array@2, d3-array@^2.3.0:
 
 d3-delaunay@^5.3.0:
   version "5.3.0"
-  resolved "https://registry.npmjs.org/d3-delaunay/-/d3-delaunay-5.3.0.tgz"
+  resolved "https://registry.yarnpkg.com/d3-delaunay/-/d3-delaunay-5.3.0.tgz#b47f05c38f854a4e7b3cea80e0bb12e57398772d"
   integrity sha512-amALSrOllWVLaHTnDLHwMIiz0d1bBu9gZXd1FiLfXf8sHcX9jrcj81TVZOqD4UX7MgBZZ07c8GxzEgBpJqc74w==
   dependencies:
     delaunator "4"
@@ -4397,7 +4346,7 @@ data-urls@^2.0.0:
 
 date-fns@^2.24.0, date-fns@^2.29.3:
   version "2.29.3"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.3.tgz#27402d2fc67eb442b511b70bbdf98e6411cd68a8"
+  resolved "https://registry.npmjs.org/date-fns/-/date-fns-2.29.3.tgz"
   integrity sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==
 
 debug@2, debug@2.6.9, debug@^2.2.0, debug@^2.6.0, debug@^2.6.9:
@@ -4485,7 +4434,7 @@ defined@^1.0.0:
 
 delaunator@4:
   version "4.0.1"
-  resolved "https://registry.npmjs.org/delaunator/-/delaunator-4.0.1.tgz"
+  resolved "https://registry.yarnpkg.com/delaunator/-/delaunator-4.0.1.tgz#3d779687f57919a7a418f8ab947d3bddb6846957"
   integrity sha512-WNPWi1IRKZfCt/qIDMfERkDp93+iZEmOxN2yy4Jg+Xhv8SLk2UTqqbe1sfiipn0and9QrE914/ihdx82Y/Giag==
 
 delayed-stream@~1.0.0:
@@ -7679,7 +7628,7 @@ moment-timezone@^0.5.41:
 
 moment@^2.29.4:
   version "2.29.4"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
+  resolved "https://registry.npmjs.org/moment/-/moment-2.29.4.tgz"
   integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
 
 mqtt-connection@^2.0.0:
@@ -9037,7 +8986,7 @@ react-chartjs-2@^4.3.1:
 
 react-datepicker@^4.10.0:
   version "4.10.0"
-  resolved "https://registry.yarnpkg.com/react-datepicker/-/react-datepicker-4.10.0.tgz#3f386ac5873dac5ea56544e51cdc01109938796c"
+  resolved "https://registry.npmjs.org/react-datepicker/-/react-datepicker-4.10.0.tgz"
   integrity sha512-6IfBCZyWj54ZZGLmEZJ9c4Yph0s9MVfEGDC2evOvf9AmVz+RRcfP2Czqad88Ff9wREbcbqa4dk7IFYeXF1d3Ag==
   dependencies:
     "@popperjs/core" "^2.9.2"
@@ -9097,7 +9046,7 @@ react-fast-compare@^2.0.1:
 
 react-fast-compare@^3.0.1:
   version "3.2.1"
-  resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.1.tgz#53933d9e14f364281d6cba24bfed7a4afb808b5f"
+  resolved "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.1.tgz"
   integrity sha512-xTYf9zFim2pEif/Fw16dBiXpe0hoy5PxcD8+OwBnTtNLfIm3g6WxhKNurY+6OmdH1u6Ta/W/Vl6vjbYP1MFnDg==
 
 react-icons@^4.8.0:
@@ -9127,12 +9076,12 @@ react-lifecycles-compat@^3.0.4:
 
 react-onclickoutside@^6.12.2:
   version "6.12.2"
-  resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.12.2.tgz#8e6cf80c7d17a79f2c908399918158a7b02dda01"
+  resolved "https://registry.npmjs.org/react-onclickoutside/-/react-onclickoutside-6.12.2.tgz"
   integrity sha512-NMXGa223OnsrGVp5dJHkuKxQ4czdLmXSp5jSV9OqiCky9LOpPATn3vLldc+q5fK3gKbEHvr7J1u0yhBh/xYkpA==
 
 react-popper@^2.3.0:
   version "2.3.0"
-  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-2.3.0.tgz#17891c620e1320dce318bad9fede46a5f71c70ba"
+  resolved "https://registry.npmjs.org/react-popper/-/react-popper-2.3.0.tgz"
   integrity sha512-e1hj8lL3uM+sgSR4Lxzn5h1GxBlpa4CQz0XLF8kx4MDrDRWY0Ena4c97PUeSX9i5W3UAfDP0z0FXCTQkoXUl3Q==
   dependencies:
     react-fast-compare "^3.0.1"
@@ -10841,7 +10790,7 @@ walker@^1.0.7:
 
 warning@^4.0.2:
   version "4.0.3"
-  resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
+  resolved "https://registry.npmjs.org/warning/-/warning-4.0.3.tgz"
   integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
   dependencies:
     loose-envify "^1.0.0"

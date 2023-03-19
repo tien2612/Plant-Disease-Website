@@ -64,18 +64,23 @@ const LineChart = ({ index, selectedDate }) => {
         const dataByDate = groupedData[formattedDate];
 
         console.log(dataByDate);
+        if (dataByDate) {
+          const chartData = {
+            id: feedIds[index],
+            // color: colors[index % colors.length],
+            data: dataByDate.map((d) => ({
+              x: new Date(d.created_at).toLocaleTimeString(),
+              y: d.value,
+            })),
+          };
 
-        const chartData = {
-          id: feedIds[index],
-          // color: colors[index % colors.length],
-          data: dataByDate.map((d) => ({
-            x: new Date(d.created_at).toLocaleTimeString(),
-            y: d.value,
-          })),
-        };
-
-        chartData.data.reverse();
-        setChartData([chartData]);
+          chartData.data.reverse();
+          setChartData([chartData]);
+        } else {
+          setChartData([]);
+          console.log(`empty`);
+        }
+      
       } catch (error) {
         console.error("Error retrieving data from Adafruit:", error);
       }
@@ -119,7 +124,7 @@ const LineChart = ({ index, selectedDate }) => {
           container: {
             color: colors.primary[500],
           },
-        },   
+        }, 
       }}
       colors={0 ? { datum: "color" } : { scheme: "nivo" }} // added
       margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
@@ -133,24 +138,27 @@ const LineChart = ({ index, selectedDate }) => {
       }}
       yFormat=" >-.2f"
       curve="catmullRom"
+      
       axisTop={null}
       axisRight={null}
       axisBottom={{
+        tickValues: [],
         orient: "bottom",
         tickSize: 0,
         tickPadding: 5,
         tickRotation: 0,
-        legend: 0 ? undefined : "Time", // added
+        legend: 0 ? undefined : formattedDate,
         legendOffset: 36,
         legendPosition: "middle",
-      }}
+        tickFormat: () => '',
+      }}      
       axisLeft={{
         orient: "left",
         tickValues: 5, // added
         tickSize: 3,
         tickPadding: 5,
         tickRotation: 0,
-        legend: 0 ? undefined : "count", // added
+        legend: 0 ? undefined : "Value", // added
         legendOffset: -40,
         legendPosition: "middle",
       }}
@@ -181,7 +189,7 @@ const LineChart = ({ index, selectedDate }) => {
             {
               on: "hover",
               style: {
-                itemBackground: "rgba(0, 0, 0, .03)",
+                itemBackground: "rgba(255, 255, 0, .03)",
                 itemOpacity: 1,
               },
             },

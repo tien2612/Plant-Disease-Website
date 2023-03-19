@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import LineChart from "../../components/LineChart";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -20,6 +21,15 @@ const Dashboard = () => {
     setSelectedDate(date); // Update the state variable with the selected date
   };
   
+  const handlePrevDay = () => {
+    const prevDate = new Date(selectedDate.getTime() - (24 * 60 * 60 * 1000));
+    setSelectedDate(prevDate);
+  };
+  
+  const handleNextDay = () => {
+    const nextDate = new Date(selectedDate.getTime() + (24 * 60 * 60 * 1000));
+    setSelectedDate(nextDate);
+  };
   return (
     <Box m="10px">
       {/* HEADER */}
@@ -27,7 +37,8 @@ const Dashboard = () => {
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
 
         <Box display="flex" alignItems="center" padding="0 0 0 500px">
-          <div>
+          <Box display="flex" alignItems="center">
+            <FaChevronLeft onClick={handlePrevDay} />
             <DatePicker 
               selected={selectedDate}
               onChange={handleDateChange}
@@ -37,12 +48,13 @@ const Dashboard = () => {
               showYearDropdown
               scrollableMonthYearDropdown
             />
-          </div>
-          <div>
-            <button onClick={() => handleDateChange(new Date())}>
-              Today
-            </button>
-          </div>
+            <FaChevronRight onClick={handleNextDay} />
+          </Box>
+          <Box display="flex" alignItems="center" flexDirection="column" marginLeft="10px">
+              <button onClick={() => handleDateChange(new Date())}>
+                Today
+              </button>
+          </Box>
         </Box>
 
         <Box>
