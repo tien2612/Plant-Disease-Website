@@ -6,15 +6,17 @@ import Header from "../../components/Header";
 import LineChart from "../../components/LineChart";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { format } from 'date-fns';
 
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  
+  const date = new Date();
+  // const todayDate = Moment(date).format('DD-MM-YYYY');
 
   const handleDateChange = (date) => {
-    console.log('Selected date:', date); // Log the selected date to the console
+    // console.log('Selected date:', date); // Log the selected date to the console
     setSelectedDate(date); // Update the state variable with the selected date
   };
   
@@ -24,17 +26,25 @@ const Dashboard = () => {
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
 
-        <Box padding="0 0 0 500px">
-          <DatePicker 
-              selected = {selectedDate}
-              onChange = {handleDateChange}
-              dateFormat = "dd/MM/yyyy"
+        <Box display="flex" alignItems="center" padding="0 0 0 500px">
+          <div>
+            <DatePicker 
+              selected={selectedDate}
+              onChange={handleDateChange}
+              dateFormat="dd/MM/yyyy"
               placeholderText="Select a date"
               isClearable
-          />
-
+              showYearDropdown
+              scrollableMonthYearDropdown
+            />
+          </div>
+          <div>
+            <button onClick={() => handleDateChange(new Date())}>
+              Today
+            </button>
+          </div>
         </Box>
-        
+
         <Box>
           <Button
             sx={{
@@ -59,82 +69,6 @@ const Dashboard = () => {
         gap="20px"
       >
         {/* ROW 1 */}
-        {/* <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="12,361"
-            subtitle="Emails Sent"
-            progress="0.75"
-            increase="+14%"
-            icon={
-              <EmailIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="431,225"
-            subtitle="Sales Obtained"
-            progress="0.50"
-            increase="+21%"
-            icon={
-              <PointOfSaleIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="32,441"
-            subtitle="New Clients"
-            progress="0.30"
-            increase="+5%"
-            icon={
-              <PersonAddIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="1,325,134"
-            subtitle="Traffic Received"
-            progress="0.80"
-            increase="+43%"
-            icon={
-              <TrafficIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box> */}
 
         {/* ROW 2 */}
         {/* Temparature chart */}

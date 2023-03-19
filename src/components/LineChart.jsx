@@ -2,32 +2,31 @@ import { ResponsiveLine } from "@nivo/line";
 import React, { useState, useEffect } from "react";
 import { useTheme } from "@mui/material";
 import { tokens } from "../theme";
-import { Box, Typography, IconButton } from "@mui/material";
 
-export const mockLineData = [
-  {
-    id: "temperature",
-    color: tokens("dark").greenAccent[500],
-    data: Array.from({ length: 10 }, () => ({
-      x: Math.floor(Math.random() * 10),
-      y: Math.floor(Math.random() * 10),
-    })),
-  },
-];
-
-const LineChart = ({ index }) => {
+const LineChart = ({ index, selectedDate }) => {
   const feedIds = ["Temperature", "Humidity", "Soil Moisture"];
   const feedKey = "aio_VVFY921P9nxUhNsld3dWKgOSEKiy";
 
-  
   const [chartData, setChartData] = useState([]);
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
+  const formatDate = (date) => {
+    if (!date) {
+      return null;
+    }
+    const parts = date.toISOString().slice(0, 10).split('-');
+    return `${parts[0]}-${parts[1]}-${parseInt(parts[2])}`;
+  };
+
+  const formattedDate = formatDate(selectedDate);
+
+  console.log(formattedDate);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const hours = 24;
+        const hours = 168;
         const now = new Date();
         const startTime = new Date(now - hours * 60 * 60 * 1000).toISOString();
 
@@ -49,25 +48,42 @@ const LineChart = ({ index }) => {
         }
 
         const data = await response.json();
-        console.log(data);
+        /* Group data */
+        const groupedData = data.reduce((acc, obj) => {
+          const date = obj.created_at.slice(0, 10); // extract the date from the timestamp
+          if (!acc[date]) {
+            acc[date] = [obj];
+          } else {
+            acc[date].push(obj);
+          }
+          return acc;
+        }, {});
+        
+        // console.log(groupedData);
+
+        const dataByDate = groupedData[formattedDate];
+
+        console.log(dataByDate);
+
         const chartData = {
           id: feedIds[index],
-          data: data.map((d) => ({
+          // color: colors[index % colors.length],
+          data: dataByDate.map((d) => ({
             x: new Date(d.created_at).toLocaleTimeString(),
             y: d.value,
           })),
         };
+
         chartData.data.reverse();
         setChartData([chartData]);
-        
       } catch (error) {
         console.error("Error retrieving data from Adafruit:", error);
       }
     };
 
     fetchData();
-  }, [index]);
-  console.log(chartData);
+    console.log(chartData);
+  }, [index, selectedDate]);
 
   return (
     <ResponsiveLine
