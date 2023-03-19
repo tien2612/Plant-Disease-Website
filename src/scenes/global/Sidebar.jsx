@@ -45,7 +45,7 @@ const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
 
-  console.log(colors.primary[400]);
+  // console.log(colors.primary[400]);
 
   return (
     <Box
@@ -135,14 +135,14 @@ const Sidebar = () => {
             />
             <Item
               title="Images"
-              to="/team"
+              to="/images"
               icon={<StorageIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="About"
-              to="/faq"
+              to="/about"
               icon={<InfoIcon />}
               selected={selected}
               setSelected={setSelected}

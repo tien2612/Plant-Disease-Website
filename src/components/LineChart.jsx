@@ -15,32 +15,9 @@ export const mockLineData = [
   },
 ];
 
-const options = {
-  scales: {
-    xAxes: [
-      {
-        ticks: {
-          callback: function (value, index, values) {
-            // Convert time format to AM/PM or 24-hour format
-            const time = value.split(":");
-            let hour = parseInt(time[0]);
-            const minutes = time[1];
-            const seconds = time[2];
-            const amPm = hour >= 12 ? "PM" : "AM";
-            hour = hour % 12 || 12;
-            const formattedTime = `${hour}:${minutes} ${amPm}`;
-            // Return formatted time
-            return formattedTime;
-          },
-        },
-      },
-    ],
-  },
-};
-
 const LineChart = ({ index }) => {
   const feedIds = ["Temperature", "Humidity", "Soil Moisture"];
-  const feedKey = "aio_PGJi38ga3BefZCY7BEw9IHZpodZO";
+  const feedKey = "aio_VVFY921P9nxUhNsld3dWKgOSEKiy";
 
   
   const [chartData, setChartData] = useState([]);
@@ -72,16 +49,17 @@ const LineChart = ({ index }) => {
         }
 
         const data = await response.json();
-
+        console.log(data);
         const chartData = {
           id: feedIds[index],
-          // color: colors[index % colors.length],
           data: data.map((d) => ({
             x: new Date(d.created_at).toLocaleTimeString(),
             y: d.value,
           })),
         };
+        chartData.data.reverse();
         setChartData([chartData]);
+        
       } catch (error) {
         console.error("Error retrieving data from Adafruit:", error);
       }

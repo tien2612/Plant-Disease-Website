@@ -1,42 +1,40 @@
+import React, { useState } from 'react'
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
-import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import EmailIcon from "@mui/icons-material/Email";
-import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import TrafficIcon from "@mui/icons-material/Traffic";
 import Header from "../../components/Header";
 import LineChart from "../../components/LineChart";
-import GeographyChart from "../../components/GeographyChart";
-import BarChart from "../../components/BarChart";
-import StatBox from "../../components/StatBox";
-import ProgressCircle from "../../components/ProgressCircle";
-
-// import React, { Component } from 'react';
-// import { Redirect } from 'react-router-dom';
-
-// const useStyles = makeStyles((theme) => ({
-//   appBar: {
-//     top: "auto",
-//     bottom: 0
-//   },
-//   typo: {
-//     flexGrow: 1,
-//     textAlign: "center"
-//   }
-// }));
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { format } from 'date-fns';
 
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const [selectedDate, setSelectedDate] = useState(null);
 
+  const handleDateChange = (date) => {
+    console.log('Selected date:', date); // Log the selected date to the console
+    setSelectedDate(date); // Update the state variable with the selected date
+  };
+  
   return (
-    <Box m="20px">
+    <Box m="10px">
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
 
+        <Box padding="0 0 0 500px">
+          <DatePicker 
+              selected = {selectedDate}
+              onChange = {handleDateChange}
+              dateFormat = "dd/MM/yyyy"
+              placeholderText="Select a date"
+              isClearable
+          />
+
+        </Box>
+        
         <Box>
           <Button
             sx={{
@@ -48,7 +46,7 @@ const Dashboard = () => {
             }}
           >
             <DownloadOutlinedIcon sx={{ mr: "10px" }} />
-            Export Data
+            Export data
           </Button>
         </Box>
       </Box>
@@ -170,7 +168,7 @@ const Dashboard = () => {
             </Box>
           </Box>
           <Box height="250px" m="-20px 0 0 0">
-            <LineChart index = {0} isDashboard={true} />
+            <LineChart index = {0} isDashboard={true} selectedDate={selectedDate} />
           </Box>
         </Box>
         {/* Humidity chart */}
@@ -204,7 +202,7 @@ const Dashboard = () => {
             </Box>
           </Box>
           <Box height="250px" m="-20px 0 0px 0">
-            <LineChart index = {1} isDashboard={true} />
+            <LineChart index = {1} isDashboard={true} selectedDate={selectedDate} />
           </Box>
         </Box>
 
@@ -240,7 +238,7 @@ const Dashboard = () => {
             </Box>
           </Box>
           <Box height="250px" m="-20px 0 0px 0">
-            <LineChart index = {2} isDashboard={true} />
+            <LineChart index = {2} isDashboard={true} selectedDate={selectedDate} />
           </Box>
         </Box>
         {/* <Box
@@ -320,8 +318,8 @@ const Dashboard = () => {
             </Typography>
             <Typography>Includes extra misc expenditures and costs</Typography>
           </Box>
-        </Box> */}
-        {/* <Box
+        </Box>
+        <Box
           gridColumn="span 4"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
@@ -354,7 +352,6 @@ const Dashboard = () => {
             <GeographyChart isDashboard={true} />
           </Box>
         </Box> */}
-
       </Box>
     </Box>
 
