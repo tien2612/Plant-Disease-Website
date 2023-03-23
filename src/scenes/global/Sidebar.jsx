@@ -46,12 +46,11 @@ const Sidebar = () => {
   const [selected, setSelected] = useState("Dashboard");
 
   // console.log(colors.primary[400]);
-
   return (
     <Box
       sx={{
         "& .pro-sidebar-inner": {
-          background: `${colors.primary[400]} !important`,
+          background: `${colors.primary[1000]} !important`,
         },
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
@@ -60,10 +59,10 @@ const Sidebar = () => {
           padding: "5px 35px 5px 20px !important",
         },
         "& .pro-inner-item:hover": {
-          color: "#868dfb !important",
+          color: "#069869! important",
         },
         "& .pro-menu-item.active": {
-          color: "#6870fa !important",
+          color: "#3da58a !important",
         },
       }}
     >
@@ -72,7 +71,7 @@ const Sidebar = () => {
           {/* LOGO AND MENU ICON */}
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
-            icon={isCollapsed ? <IoIosLeaf color= "#6870fa" fontSize={20} /> : undefined}
+            icon={isCollapsed ? <IoIosLeaf color= "#3da58a" fontSize={25} /> : undefined}
             style={{
               margin: "10px 0 20px 0",
               color: colors.grey[100],
@@ -92,7 +91,7 @@ const Sidebar = () => {
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   {/* <MenuOutlinedIcon /> */}
-                  <IoIosLeaf color= "#6870fa" />
+                  <IoIosLeaf color= "#3da58a" />
                 </IconButton>
               </Box>
             )}

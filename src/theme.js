@@ -26,6 +26,7 @@ export const tokens = (mode) => ({
           700: "#0c101b",
           800: "#080b12",
           900: "#040509",
+          1000: "#1F2A40"
         },
         greenAccent: {
           100: "#dbf5ee",
@@ -59,6 +60,7 @@ export const tokens = (mode) => ({
           700: "#3e4396",
           800: "#2a2d64",
           900: "#151632",
+          1000: "#3e4396",
         },
       }
     : {
@@ -83,6 +85,7 @@ export const tokens = (mode) => ({
           700: "#727681",
           800: "#a1a4ab",
           900: "#d0d1d5",
+          1000: "#BADAFF",
         },
         greenAccent: {
           100: "#0f2922",
@@ -116,6 +119,7 @@ export const tokens = (mode) => ({
           700: "#a4a9fc",
           800: "#c3c6fd",
           900: "#e1e2fe",
+          1000: "#4cceac",
         },
       }),
 });

@@ -5,7 +5,7 @@ import { tokens } from "../theme";
 
 const LineChart = ({ index, selectedDate }) => {
   const feedIds = ["Temperature", "Humidity", "Soil Moisture"];
-  const feedKey = "aio_VVFY921P9nxUhNsld3dWKgOSEKiy";
+  const feedKey = "aio_qreR37bXOGHe8ECqe4womcV6Wzqt";
 
   const [chartData, setChartData] = useState([]);
   const theme = useTheme();
