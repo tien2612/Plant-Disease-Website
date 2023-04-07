@@ -5,20 +5,27 @@ import { tokens } from "../theme";
 
 const LineChart = ({ index, selectedDate }) => {
   const feedIds = ["Temperature", "Humidity", "Soil Moisture"];
-  const feedKey = "aio_qreR37bXOGHe8ECqe4womcV6Wzqt";
+  const feedKey = "aio_yFLR93oAwRxwn3IP99rQkih9MJ37";
 
   const [chartData, setChartData] = useState([]);
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  const formatDate = (date) => {
-    if (!date) {
-      return null;
-    }
-    const parts = date.toISOString().slice(0, 10).split('-');
-    return `${parts[0]}-${parts[1]}-${parseInt(parts[2])}`;
+  // const formatDate = (date) => {
+  //   if (!date) {
+  //     return null;
+  //   }
+  //   const parts = date.toISOString().slice(0, 10).split('-');
+  //   return `${parts[0]}-${parts[1]}-${parseInt(parts[2])}`;
+  // };
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
   };
-
+  
   const formattedDate = formatDate(selectedDate);
 
   console.log(formattedDate);
@@ -48,6 +55,7 @@ const LineChart = ({ index, selectedDate }) => {
         }
 
         const data = await response.json();
+        console.log(data);
         /* Group data */
         const groupedData = data.reduce((acc, obj) => {
           const date = obj.created_at.slice(0, 10); // extract the date from the timestamp
