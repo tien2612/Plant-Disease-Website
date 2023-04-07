@@ -6,10 +6,8 @@ import { tokens } from "../theme";
 const LineChart = ({ index, selectedDate }) => {
   const feedIds = ["Temperature", "Humidity", "Soil Moisture"];
 
-  // const feedKey = "aio_xWiQ71rszOKkLIF8uq9PN5seCIcg";
   const feedKey = process.env.REACT_APP_API_KEY;
-  console.log(feedKey);
-  
+
   const [chartData, setChartData] = useState([]);
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
