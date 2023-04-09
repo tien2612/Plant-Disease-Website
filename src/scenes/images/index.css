@@ -1,0 +1,42 @@
+.wrap-layout-image {
+    /* background-color: #fff; */
+    margin-top: 10px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.box-image {
+    text-decoration: none;
+    color: #fff;
+    min-width: 400px;
+    display: flex;
+    padding: 12px 8px;
+    margin: 6px 0;
+    border: 2px solid black;
+    /* min-width: 200px; */
+    border-radius: 5px;
+}
+
+.box-image:hover {
+    /* border: 2px solid #EE4D2D; */
+    opacity: 60%;
+}
+
+.img-disease {
+    flex: 1;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.info-image {
+    flex: 1;
+    padding: 0 16px;
+    text-align: center;
+    margin: auto;
+}
