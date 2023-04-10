@@ -1,6 +1,9 @@
 import { Box, useTheme } from "@mui/material";
 import Header from "../../components/Header";
 import { tokens } from "../../theme";
+import { Link } from "react-router-dom";
+import ImageClassifier from './index-page2';
+
 import './index.css'
 
 const api_image = [
@@ -20,17 +23,17 @@ const api_image = [
         first_image: 'https://vcdn1-dulich.vnecdn.net/2021/07/16/8-1626444967.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=GfgGn4dNuKZexy1BGkAUNA',
     },   
     {
-      name_disease: 'Rust',
+      name_disease: 'Scab',
       quantity: 30,
       first_image: 'https://vcdn1-dulich.vnecdn.net/2021/07/16/8-1626444967.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=GfgGn4dNuKZexy1BGkAUNA',
     },     
     {
-        name_disease: 'Rust',
+        name_disease: 'Yellow',
         quantity: 30,
         first_image: 'https://vcdn1-dulich.vnecdn.net/2021/07/16/8-1626444967.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=GfgGn4dNuKZexy1BGkAUNA',
     },     
     {
-        name_disease: 'Rust',
+        name_disease: 'Pests',
         quantity: 30,
         first_image: 'https://vcdn1-dulich.vnecdn.net/2021/07/16/8-1626444967.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=GfgGn4dNuKZexy1BGkAUNA',
     },      
@@ -39,9 +42,13 @@ const api_image = [
 
 const BoxImage = (props) => {
     return (
-        <a 
+        <Link 
             className="box-image"
-            href = "./about"
+            to={{
+                pathname: "./index-page2",
+                state: { imageClassify: true }
+              }}
+              
         >
           <img 
             className="img-disease"
@@ -52,8 +59,8 @@ const BoxImage = (props) => {
               <h1>{props.name_disease}</h1>    
               <h4>{props.quantity} images</h4>
           </div>
-        </a>
-    )
+        </Link>
+    );
 }
 
 const Images = () => {
@@ -74,7 +81,6 @@ const Images = () => {
                       quantity={items.quantity}
                       first_image={items.first_image}
                   >
-
                   </BoxImage>
                 ))
             }
