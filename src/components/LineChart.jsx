@@ -27,7 +27,7 @@ const LineChart = ({ index, selectedDate }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const hours = 168;
+        const hours = 200;
         const now = new Date();
         const startTime = new Date(now - hours * 60 * 60 * 1000).toISOString();
 
@@ -80,7 +80,6 @@ const LineChart = ({ index, selectedDate }) => {
           setChartData([chartData]);
         } else {
           setChartData([]);
-          console.log(`empty`);
         }
       
       } catch (error) {

@@ -25,14 +25,14 @@
     display: flex;
     padding: 12px 8px;
     margin: 6px 0;
-    background: rgba(45, 73, 100, 0.2);
+    background: rgba(75, 83, 90, 0.2);
     /* background: rgba(205, 221, 185, 0.2); */
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(130, 172, 214, 0.43);
-    color: #fff;
+    border: 1px solid #3e458a;
+    color: #000;
 }
 
 .box-image:hover {
