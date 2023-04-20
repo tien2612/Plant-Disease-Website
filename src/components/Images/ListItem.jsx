@@ -37,7 +37,7 @@ const ListItem = ( {date, items} ) => {
     const navigate = useNavigate();
 
     const totalItems = Object.values(items).reduce((acc, curr) => acc + curr.length, 0);
-
+    
     const totalCounts = {};
     for (const item of Object.keys(items)) {
       const totalCount = items[item].length;
@@ -76,7 +76,7 @@ const ListItem = ( {date, items} ) => {
                 className={classes.header}
             >
             <Typography variant="h5" sx={{justifyContent: 'center'}}>
-            {formattedDate}
+                {formattedDate}
             </Typography>
             <IconButton onClick={handleExpandClick}>
             <ExpandMoreIcon />

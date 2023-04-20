@@ -8,7 +8,7 @@ const getFilteredImages = (items, status) => {
     return [];
   }
 
-  return items[status].map(item => item.item);
+  return items[status].map(item => item.imageUrl);
 }
 
 const ImageClassifier = () => {
