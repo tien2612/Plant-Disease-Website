@@ -1,8 +1,8 @@
 import { Box, useTheme } from "@mui/material";
-import Header from "../../components/Header";
+import Header from "../Header";
 import { tokens } from "../../theme";
 import { Link } from "react-router-dom";
-import ImageClassifier from './index-page2';
+import ImageClassifier from "./index-page2";
 import './index.css'
 
 const api_image = [
@@ -40,9 +40,8 @@ const api_image = [
 
 
 const BoxImage = (props) => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const status = urlParams.get('status');
-    const linkTo = `./index-page2?status=${props.name_disease}`;
+    const date = "2023-04-19";
+    const linkTo = `./index-page2?problem=${props.name_disease}&date=${props.date}`;
 
     return (
         <Link 
@@ -62,7 +61,7 @@ const BoxImage = (props) => {
     );
 }
 
-const Images = () => {
+const AllBoxImages = ( {date} ) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const date_of_data = new Date();
@@ -79,6 +78,7 @@ const Images = () => {
                       name_disease={items.name_disease}
                       quantity={items.quantity}
                       first_image={items.first_image}
+                      date={date}
                   >
                   </BoxImage>
                 ))
@@ -89,4 +89,4 @@ const Images = () => {
   );
 };
 
-export default Images;
+export default AllBoxImages;

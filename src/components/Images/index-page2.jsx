@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { collection, query, getDocs } from "firebase/firestore";
-import { firestoredb } from "../../components/Firebase/firebase";
+import { firestoredb } from "../Firebase/firebase";
 import Grid from "@mui/material/Grid";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate } from "react-router-dom";
@@ -30,9 +30,9 @@ const ImageClassifier = () => {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const queryStatus = urlParams.get('status')
+  const date = urlParams.get('date')
   
   const status = queryStatus.toLowerCase();
-  const date = '2023-04-19';
   // fetch data from firestore and store into details
   const userData = async () => {
     const q = query(collection(firestoredb, "images"));
