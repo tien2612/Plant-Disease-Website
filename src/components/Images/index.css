@@ -1,0 +1,70 @@
+.wrap-layout-image {
+    /* background-color: #fff; */
+    margin-top: 10px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.box-image {
+    /* text-decoration: none;
+    /* style Box cua Quan 
+    min-width: 400px;
+    display: flex;
+    padding: 12px 8px;
+    margin: 6px 0;
+    border: 2px solid black;
+   // min-width: 200px;
+    border-radius: 5px; 
+    */
+
+    
+    /* style Box cua Tien */
+    /* From https://css.glass */
+    min-width: 400px;
+    display: flex;
+    padding: 12px 8px;
+    margin: 6px 0;
+    background: rgba(75, 83, 90, 0.2);
+    /* background: rgba(205, 221, 185, 0.2); */
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid #3e458a;
+    color: #000;
+}
+
+.box-image:hover {
+    /* border: 2px solid #EE4D2D; */
+    opacity: 60%;
+}
+
+.img-disease {
+    flex: 1;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.info-image {
+    flex: 1;
+    padding: 0 16px;
+    text-align: center;
+    margin: auto;
+}
+
+.glassmorphism {
+    /* From https://css.glass */
+    background: rgba(45, 73, 100, 0.2);
+    /* background: rgba(205, 221, 185, 0.2); */
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(130, 172, 214, 0.43);
+  }
