@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Box, Button, Typography, IconButton, Collapse, Grid, useTheme } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { makeStyles } from '@material-ui/core/styles';
-import Header from "../Header";
 import { tokens } from "../../theme";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   item: {
@@ -34,10 +34,7 @@ const ListItem = ( {date, items} ) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const [expanded, setExpanded] = useState(false);
-
-    const handleExpandClick = () => {
-    setExpanded(!expanded);
-    };
+    const navigate = useNavigate();
 
     const totalItems = Object.values(items).reduce((acc, curr) => acc + curr.length, 0);
 
@@ -54,7 +51,21 @@ const ListItem = ( {date, items} ) => {
         month: 'long',
         day: 'numeric',
     });
-  
+
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
+
+    const handleDetailsClick = () => {
+        navigate("/images/box_images", {
+            state: {
+                date: date,
+                items: items,
+                totalCounts: totalCounts,
+            }
+        });
+    }
+
   return (
         <Box className={classes.item} sx={{textAlign: 'center'}}>
             <Box
@@ -123,7 +134,7 @@ const ListItem = ( {date, items} ) => {
                     </Typography>    
                 </Grid>
                 <Grid item xs = {12} sx={{textAlign: "right"}}>
-                    <Button variant="contained">
+                    <Button variant="contained" onClick={handleDetailsClick}>
                         Details
                     </Button>
                 </Grid>

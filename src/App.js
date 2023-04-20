@@ -8,8 +8,9 @@ import { ColorModeContext, useMode } from "./theme";
 import Dashboard from "./scenes/dashboard";
 import About from "./scenes/about";
 import Images from "./scenes/images/images";
-import ImageClassifier from "./components/Images/index-page2";
+import ImageClassifier from "./components/Images/details";
 import ListItem from "./components/Images/ListItem";
+import AllBoxImages from "./components/Images";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -27,9 +28,9 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/about" element={<About />} />
               <Route path="/images" element={<Images />} />
-              <Route path="/images/index-page2" element={<ImageClassifier />} />
+              <Route path="/images/box_images/details" element={<ImageClassifier />} />
               <Route path="/list_item" element={<ListItem />} />
-
+              <Route path="/images/box_images" element={<AllBoxImages />} />
 
             </Routes>
           </main>

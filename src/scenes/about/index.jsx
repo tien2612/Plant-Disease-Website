@@ -1,51 +1,6 @@
-// import { Box, useTheme } from "@mui/material";
-// import Header from "../../components/Header";
-// import Accordion from "@mui/material/Accordion";
-// import AccordionSummary from "@mui/material/AccordionSummary";
-// import AccordionDetails from "@mui/material/AccordionDetails";
-// import Typography from "@mui/material/Typography";
-// import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-// import { tokens } from "../../theme";
-
-// const About = () => {
-//   const theme = useTheme();
-//   const colors = tokens(theme.palette.mode);
-//   return (
-//     <Box m="20px">
-//       <Header title="About us" subtitle="Plant Diseases and Pests Detection" />
-//         <div>
-//           <p>This is our Plant Diseases and Pests Detection product. 
-//             Why AI?
-//             Artificial intelligence system’s capacity to dynamically discern anomalous indicators in crops, 
-//             such as separating pests from photographs of crops, is one of their benefits when used in agriculture. 
-//             Utilizing conventional sensors to implement this feature is frequently difficult. 
-//             When a sensor is utilized, it often needs to be set up in large quantities and well calibrated in order to produce a reliable value. 
-//             This will make utilizing a sensor solution to find anomalies challenging and costly. 
-//             When the user gathers crop anomalies to train the system, this is possible in a very flexible way thanks to artificial intelligence technology. 
-//             The system was eventually able to pinpoint the majority of issues facing agricultural operations as the amount of data collected increased overtime. 
-//             A sophisticated method for agriculture’s 4.0 technology is artificial intelligence.
-//           </p>
-
-//           <hr />
-
-//           <p>
-//           </p>
-
-//           <p>Copyright by HCMUT.</p>
-//         </div>
-
-
-//     </Box>
-//   );
-// };
-
-// export default About;
-
-
 import { Box, useTheme, Typography } from "@mui/material";
 import Header from "../../components/Header";
 import { tokens } from "../../theme";
-import WorkerCard from "../../components/WorkerCard/workercard";
 import Avatar from 'react-avatar';
 
 const About = () => {
