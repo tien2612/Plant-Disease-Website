@@ -77,7 +77,7 @@ const AllBoxImages = () => {
     const allItems = location.state.items;
     const totalCounts = location.state.totalCounts;
     const navigate = useNavigate();
-
+    
     // Update api_image quantity with the totalCounts
     const updatedApiImage = api_image.map((item) => ({
         ...item,
