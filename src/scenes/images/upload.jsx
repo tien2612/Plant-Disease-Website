@@ -117,9 +117,9 @@ const UploadForm = () => {
 
         const addImage = async () => {
         const document = await addDoc(usersCollectionRef, {
-            date: "2023-04-28",
+            date: "2023-05-10",
             imageUrl: url,
-            status: "yellow",
+            status: "scab",
         })
         }
         addImage();

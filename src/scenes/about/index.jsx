@@ -18,7 +18,7 @@ const About = () => {
     <Box m="20px">
       <Header title="About us" subtitle="Plant Diseases and Pests Detection" />
       <Box display="flex" alignItems="center" my="20px">
-      <img src="https://www.ischool.berkeley.edu/sites/default/files/styles/facebook_image/public/sproject_teaser_image/reversed.jpg?itok=SuizhEmV" alt="Plant" width="500" height="220" />
+      <img src="/assets/plant.jpg" alt="Plant" width="500" height="220" />
         <Box ml="20px">
           <p style={{ fontSize: "20px", textAlign: "justify" }}>
             We are a team of passionate developers and researchers who have come
