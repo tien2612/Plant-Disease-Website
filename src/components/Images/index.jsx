@@ -84,7 +84,7 @@ const AllBoxImages = () => {
         quantity: totalCounts[item.name_disease.toLowerCase()] || 0,
     }));
     
-    const info_date = new Date().toLocaleDateString('en-US', {
+    const info_date = new Date(date).toLocaleDateString('en-US', {
         timeZone: 'Asia/Ho_Chi_Minh',
         weekday: 'long',
         year: 'numeric',

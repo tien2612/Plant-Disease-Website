@@ -1,7 +1,8 @@
 import React from "react";
-import Grid from "@mui/material/Grid";
+import { Box, Grid } from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate, useLocation } from "react-router-dom";
+import Header from "../Header";
 
 const getFilteredImages = (items, status) => {
   if (!items[status]) {
@@ -32,8 +33,17 @@ const ImageClassifier = () => {
   const filteredImages = getFilteredImages(items, status);
   console.log(filteredImages);
 
+  const info_date = new Date(date).toLocaleDateString('en-US', {
+    timeZone: 'Asia/Ho_Chi_Minh',
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
   return (
-    <div>
+    <Box m="20px">
+        <Header title={queryStatus + " Images"} subtitle= {info_date}/>
       <div style={{ display: 'flex', alignItems: 'center', margin: '20px'}}>
         <ArrowBackIcon 
           onClick={() => {
@@ -55,7 +65,7 @@ const ImageClassifier = () => {
           </Grid>
         ))}
       </Grid>
-    </div>
+    </Box>
   );
 }
 
