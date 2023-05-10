@@ -122,15 +122,15 @@ const ListItem = ( {date, items} ) => {
 
                 <Grid item xs = {6}>
                 <Typography variant="h5"> 
-                        <Box component="span" fontWeight='bold' color={colors.greenAccent[400]}>Yellow: </Box> 
-                        {totalCounts['yellow'] ? totalCounts['yellow'] : 0}
+                        <Box component="span" fontWeight='bold' color={colors.greenAccent[400]}>Frogeye Leaf Spot: </Box> 
+                        {totalCounts['frogeye leaf spot'] ? totalCounts['frogeye leaf spot'] : 0}
                     </Typography>   
                 </Grid>
 
                 <Grid item xs = {6}>
                 <Typography variant="h5"> 
-                        <Box component="span" fontWeight='bold' color={colors.greenAccent[400]}>Pests: </Box> 
-                        {totalCounts['pests'] ? totalCounts['pests'] : 0}
+                        <Box component="span" fontWeight='bold' color={colors.greenAccent[400]}>Powdery Mildew: </Box> 
+                        {totalCounts['powdery mildew'] ? totalCounts['powdery mildew'] : 0}
                     </Typography>    
                 </Grid>
                 <Grid item xs = {12} sx={{textAlign: "right"}}>

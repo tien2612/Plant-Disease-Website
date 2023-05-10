@@ -28,14 +28,14 @@ const api_image = [
       first_image: '/assets/scab.jpg'
     },     
     {
-        name_disease: 'Yellow',
+        name_disease: 'Frogeye Leaf Spot',
         quantity: 30,
-        first_image: '/assets/yellow.jpg'
+        first_image: '/assets/frogeye_leaf_spot.jpg'
     },     
     {
-        name_disease: 'Pests',
+        name_disease: 'Powdery Mildew',
         quantity: 30,
-        first_image: '/assets/pests.jpg'
+        first_image: '/assets/powdery_mildew.jpg'
     },      
 ]
 
@@ -62,7 +62,7 @@ const BoxImage = (props) => {
                 alt= {props.name_disease} 
             />
             <div className="info-image">
-                <h1>{props.name_disease}</h1>    
+                <h2>{props.name_disease}</h2>    
                 <h4>{props.quantity} images</h4>
             </div>
         </div>

@@ -2393,27 +2393,41 @@ const Images = () => {
             "date": "2023-05-10",
             "status": "rust",
             "id": "zyRqS3Cx8CB4NmDLXDj6"
+        },
+        {
+            "imageUrl": "http://localhost:3000/assets/powdery_mildew.jpg",
+            "date": "2023-05-10",
+            "status": "powdery_mildew",
+            "id": "wMskaiGlDX2sEYr8WQEt"
+        },
+        {
+            "imageUrl": "http://localhost:3000/assets/frogeye_leaf_spot.jpg",
+            "date": "2023-05-10",
+            "status": "frogeye_leaf_spot",
+            "id": "wMskaiGlDX2sEYr8WQEt3"
         }
     ]
 
     const data = fakeItems.reduce((acc, item) => {
-    if (!acc[item.date]) {
-        acc[item.date] = {};
-    }
+        if (!acc[item.date]) {
+            acc[item.date] = {};
+        }
 
-    if (!acc[item.date][item.status]) {
-        acc[item.date][item.status] = [];
-    }
+        if (!acc[item.date][item.status]) {
+            const statusWithSpace = item.status.replace(/_/g, " ");
+            item.status = statusWithSpace;
+            acc[item.date][item.status] = [];
+        }
 
-    acc[item.date][item.status].push({
-        id: item.id,
-        imageUrl: item.imageUrl
-    });
+        acc[item.date][item.status].push({
+            id: item.id,
+            imageUrl: item.imageUrl
+        });
 
         return acc;
     }, {});
 
-    // console.log(items);
+    console.log("items", data);
 
     const items = Object.entries(data)
         .sort(([date1], [date2]) => new Date(date2) - new Date(date1))
